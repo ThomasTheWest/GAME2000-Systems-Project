@@ -6,6 +6,7 @@ TagManager:
   tags:
   - objective
   - goal
+  - mover
   layers:
   - Default
   - TransparentFX

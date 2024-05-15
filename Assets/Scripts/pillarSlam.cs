@@ -7,9 +7,13 @@ public class pillarSlam : MonoBehaviour
     private Vector3 originalPos;
     public float distance = 5.0f; 
     public float speed = 100.0f; 
-    private bool movingBack = false;
+    public bool movingBack = false;
     private bool movingFast = false;
     private Rigidbody2D rb;
+
+    
+    public bool ifLeft = false;
+    private float mult = 1.0f;
 
     void Start()
     {
@@ -20,9 +24,9 @@ public class pillarSlam : MonoBehaviour
         originalPos = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetMouseButtonDown(0) && movingBack == false)
+        if (Input.GetMouseButtonDown(1) && movingBack == false)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (GetComponent<Collider2D>() == null || GetComponent<Collider2D>().OverlapPoint(mousePosition))
@@ -55,6 +59,16 @@ public class pillarSlam : MonoBehaviour
             {
                 movingBack = false;
             }
+        }
+    }
+
+    private void Update()
+    {
+        //this decides whether the block is on the left side of the map, changing the direction multiplier to -1, inverting the direction.
+        //be sure to check off whether or not the specific pillar is on the left or right when setting up levels.
+        if (ifLeft) 
+        {
+            mult = -1;
         }
     }
 }
