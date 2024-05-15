@@ -13,6 +13,7 @@ public class spinningLauncher : MonoBehaviour
     private Collider2D collide;
     public GameObject ballCatcher;
     public GameObject Ball;
+    public Rigidbody2D ballGrav;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class spinningLauncher : MonoBehaviour
         if (ballCaught == true)
         {
             Ball.transform.position = transform.position;
+            ballGrav.gravityScale = 0;
             collide.enabled = false;
         }
 
@@ -43,6 +45,7 @@ public class spinningLauncher : MonoBehaviour
         {
             ballCaught = false;
             collide.enabled = false;
+            ballGrav.gravityScale = 1;
         }
     }
 
