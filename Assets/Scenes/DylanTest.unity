@@ -1276,6 +1276,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865914098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3073113897790345096, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+  m_PrefabInstance: {fileID: 6433253276179621503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1865914100 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2654317827231126146, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+  m_PrefabInstance: {fileID: 6433253276179621503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1865914101 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8361468652856809903, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+  m_PrefabInstance: {fileID: 6433253276179621503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1865914102 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4739615620889626704, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+  m_PrefabInstance: {fileID: 6433253276179621503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1865914103 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4842227961445432077, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+  m_PrefabInstance: {fileID: 6433253276179621503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1992222087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,6 +1393,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1625872265190302762, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1865914102}
+    - target: {fileID: 1625872265190302762, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+      propertyPath: boxColl
+      value: 
+      objectReference: {fileID: 1865914100}
+    - target: {fileID: 1625872265190302762, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+      propertyPath: renderer
+      value: 
+      objectReference: {fileID: 1865914103}
+    - target: {fileID: 1625872265190302762, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+      propertyPath: objective
+      value: 
+      objectReference: {fileID: 1865914098}
+    - target: {fileID: 1625872265190302762, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+      propertyPath: circleColl
+      value: 
+      objectReference: {fileID: 1865914101}
     - target: {fileID: 3073113897790345096, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
       propertyPath: m_Name
       value: Objective
