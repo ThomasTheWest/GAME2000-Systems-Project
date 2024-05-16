@@ -24,6 +24,8 @@ public class spinningLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (ballCaught == true && directionRight == true)
         {
             StartCoroutine(RotatingRight());
@@ -41,16 +43,26 @@ public class spinningLauncher : MonoBehaviour
             collide.enabled = false;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && ballCaught == true)
         {
             ballCaught = false;
-            collide.enabled = false;
             ballGrav.gravityScale = 1;
+
+            if (directionRight == true)
+            {
+                StartCoroutine(launchRight());
+            }
+
+            if (directionRight != true)
+            {
+                StartCoroutine(launchLeft());
+            }
         }
     }
 
     IEnumerator RotatingRight()
     {
+        ballGrav.velocity = Vector3.zero;
         rotating = true;
         float timeElapsed = 0;
         Quaternion startRotation = ballCatcher.transform.rotation;
@@ -68,6 +80,7 @@ public class spinningLauncher : MonoBehaviour
 
     IEnumerator RotatingLeft()
     {
+        ballGrav.velocity = Vector3.zero;
         rotating = true;
         float timeElapsed = 0;
         Quaternion startRotation = ballCatcher.transform.rotation;
@@ -81,6 +94,30 @@ public class spinningLauncher : MonoBehaviour
         }
         ballCatcher.transform.rotation = targetRotation;
         rotating = false;
+    }
+
+    IEnumerator launchRight()
+    {
+        float timeElapsed = 0;
+
+        while (timeElapsed < 120)
+        {
+            Ball.transform.Translate (new Vector3(8,8,0) * Time.deltaTime);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    IEnumerator launchLeft()
+    {
+        float timeElapsed = 0;
+
+        while (timeElapsed < 120)
+        {
+            Ball.transform.Translate(new Vector3(-8, 8, 0) * Time.deltaTime);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
