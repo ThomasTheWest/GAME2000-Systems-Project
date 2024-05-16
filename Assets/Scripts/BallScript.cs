@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BallScript : MonoBehaviour
 {
 
     public GameObject objective;
     public Rigidbody2D rb;
+
+    public GameObject leftArrows;
+    public GameObject rightArrows;
+
+    public TMP_Text massDisplay;
+    public TMP_Text shapeDisplay;
 
     public SpriteRenderer renderer;
     public CircleCollider2D circleColl;
@@ -70,6 +77,21 @@ public class BallScript : MonoBehaviour
         //Limiting range of controlNo to Min and Max which can be edited in the inspector
         controlNo = Mathf.Clamp(controlNo, controlNoMin, controlNoMax);
 
+        if (controlNo == 0)
+        {
+
+            leftArrows.SetActive(true);
+            rightArrows.SetActive(false);
+
+        }
+        else if (controlNo == 1)
+        {
+
+            leftArrows.SetActive(false);
+            rightArrows.SetActive(true);
+
+        }
+
 
         //Inputs for interacting with currently selected control
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
@@ -108,7 +130,11 @@ public class BallScript : MonoBehaviour
 
         }
 
+        mass = Mathf.Clamp(mass, 1, 20);
+
         rb.mass = mass;
+
+        massDisplay.text = mass.ToString();
 
     }
 
@@ -124,6 +150,7 @@ public class BallScript : MonoBehaviour
 
             renderer.sprite = ball;
             spriteChange = false;
+            shapeDisplay.text = "Circle".ToString();
 
         }
         else
@@ -133,6 +160,7 @@ public class BallScript : MonoBehaviour
 
             renderer.sprite = square;
             spriteChange = true;
+            shapeDisplay.text = "Square".ToString();
 
         }
 
