@@ -42,6 +42,7 @@ public class spinningLauncher : MonoBehaviour
         if (ballCaught == true)
         {
             Ball.transform.position = transform.position;
+            Ball.transform.rotation = ballCatcher.transform.rotation;
             ballGrav.gravityScale = 0;
             collide.enabled = false;
         }
@@ -104,10 +105,10 @@ public class spinningLauncher : MonoBehaviour
     {
         float timeElapsed = 0;
 
-        while (timeElapsed < 120)
+        while (timeElapsed < 300000)
         {
-            Ball.transform.Translate (new Vector3(8,8,0) * Time.deltaTime);
-            timeElapsed += Time.deltaTime;
+            Ball.transform.Translate (new Vector3(8,9,0) * Time.deltaTime);
+            timeElapsed += 1;
             yield return null;
         }
     }
@@ -116,10 +117,10 @@ public class spinningLauncher : MonoBehaviour
     {
         float timeElapsed = 0;
 
-        while (timeElapsed < 120)
+        while (timeElapsed < 300000)
         {
-            Ball.transform.Translate (new Vector3(-8, 8, 0) * Time.deltaTime);
-            timeElapsed += Time.deltaTime;
+            Ball.transform.Translate (new Vector3(-8, 9, 0) * Time.deltaTime);
+            timeElapsed += 1;
             yield return null;
         }
     }
