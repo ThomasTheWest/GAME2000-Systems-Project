@@ -1110,7 +1110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce105db2278aa784caf6f02113ce1487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasVictory: {fileID: 0}
   tagObjective: objective
   sceneIndex: 2
 --- !u!61 &361622230
@@ -1374,7 +1373,7 @@ MonoBehaviour:
   distance: 5
   speed: 100
   isRight: 0
-  isUp: 0
+  isUp: 1
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
   cursorGrabH: {fileID: 0}
@@ -4442,7 +4441,7 @@ MonoBehaviour:
   distance: 5
   speed: 100
   isRight: 0
-  isUp: 0
+  isUp: 1
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
   cursorGrabH: {fileID: 0}
