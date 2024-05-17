@@ -8,7 +8,6 @@ public class pillarMove : MonoBehaviour
     public float moveLimit;
     private float maxLeft, maxRight;
     private bool isMoving = false;
-    private Vector2 posOriginal, posLimited;
 
     [Header("Grab")]
     public Rigidbody2D selectedObject;
@@ -21,6 +20,8 @@ public class pillarMove : MonoBehaviour
     public float speed = 100.0f;
     public bool isRight;
     private int isRightValue;
+    public bool isUp;
+    private int isUpValue;
     private bool isSlamming = false;
     private Rigidbody2D pillar;
     private Vector2 posStart;
@@ -36,7 +37,6 @@ public class pillarMove : MonoBehaviour
         maxRight = moveLimit;
 
         pillar = GetComponent<Rigidbody2D>();
-        posOriginal = transform.position;
         posStart = transform.position;
 
         Cursor.SetCursor(cursorOpen, hotSpot, cursorMode);
@@ -46,16 +46,15 @@ public class pillarMove : MonoBehaviour
         {
             isRightValue = 1;
         }
-        else 
-        { 
+        else
+        {
             isRightValue = -1;
         }
     }
     void Update()
     {
-        /*Debug.Log("is it moving? " + isMoving);
-        Debug.Log("is it slamming? " + isSlamming);*/
-        //Debug.Log("What is s pos? " + posStart.y);
+        Debug.Log("is it moving? " + isMoving);
+        Debug.Log("is it slamming? " + isSlamming);
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -71,30 +70,19 @@ public class pillarMove : MonoBehaviour
         }
         /*
         //grab logic
-        if (Input.GetMouseButtonDown(0) && !isMoving)
+        if (Input.GetMouseButtonDown(1) && !isMoving)
         {
-            //this array just looks for whatever has the Mover tag and is a collider
-            Collider2D[] targetObjects = Physics2D.OverlapPointAll(mousePosition);
+            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
 
-            foreach (Collider2D targetObject in targetObjects)
+            if (targetObject)
             {
-                if (targetObject.CompareTag("mover"))
-                {
-                    Cursor.SetCursor(cursorGrabH, hotSpot, cursorMode);
+                Cursor.SetCursor(cursorGrabH, hotSpot, cursorMode);
 
-                    selectedObject = targetObject.transform.gameObject.GetComponent<Rigidbody2D>();
-                    offset = selectedObject.transform.position - mousePosition;
-                    isMoving = true;
-                    isGrabbed = true;
-                }
+                selectedObject = targetObject.transform.gameObject.GetComponent<Rigidbody2D>();
+                offset = selectedObject.transform.position - mousePosition;
+                isMoving = true;
+                isGrabbed = true;
             }
-        }
-
-        if (isGrabbed)
-        {
-            posLimited = mousePosition + offset;
-            posLimited.y = Mathf.Clamp(posOriginal.y, maxLeft, maxRight);
-            selectedObject.transform.position = posLimited;
         }
 
         if (Input.GetMouseButtonUp(0) && selectedObject)
@@ -107,7 +95,6 @@ public class pillarMove : MonoBehaviour
         }
         */
     }
-
     void FixedUpdate()
     {
         if (selectedObject)
@@ -120,14 +107,30 @@ public class pillarMove : MonoBehaviour
             //moving dang fast (multiplied by isRightValue to change direction)
             Vector3 displacement = pillar.position - posStart;
 
-            if (Mathf.Abs(displacement.x) >= distance)
+            if (!isUp && Mathf.Abs(displacement.x) >= distance)
+            {
+                isSlamming = false;
+            }
+            else if (isUp && Mathf.Abs(displacement.y) >= distance)
             {
                 isSlamming = false;
             }
             else
             {
-                Vector2 targetPosition = pillar.position + Vector2.left * speed * Time.deltaTime * isRightValue;
-                pillar.MovePosition(targetPosition);
+                if (!isUp)
+                {
+
+                    Vector2 targetPosition = pillar.position + Vector2.left * speed * Time.deltaTime * isRightValue;
+                    pillar.MovePosition(targetPosition);
+
+                }
+                else if (isUp)
+                {
+
+                    Vector2 targetPosition = pillar.position + Vector2.up * speed * Time.deltaTime;
+                    pillar.MovePosition(targetPosition);
+
+                }
             }
         }
 
