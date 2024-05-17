@@ -114,7 +114,7 @@ public class spinningLauncher : MonoBehaviour
 
         while (timeElapsed < 120)
         {
-            Ball.transform.Translate(new Vector3(-8, 8, 0) * Time.deltaTime);
+            Ball.transform.Translate (new Vector3(-8, 8, 0) * Time.deltaTime);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
