@@ -218,7 +218,7 @@ public class BallScript : MonoBehaviour
         if (collision.gameObject.tag == "Death")
         {
             Debug.Log("Respawning");
-            objective.transform.position = respawnPoint.transform.position;
+            transform.position = respawnPoint.transform.position;
         }
     }
 
