@@ -635,7 +635,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!114 &275705693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,6 +653,7 @@ MonoBehaviour:
   distance: 5
   speed: 60
   isRight: 0
+  isUp: 0
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
   cursorGrabH: {fileID: 0}
@@ -722,6 +723,71 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -81875545, guid: 31bb9eb1d9d094bac9a3a49215cc647b, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+--- !u!1001 &451042116
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 621688353446345572, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_Name
+      value: Square (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.63232374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.20050889
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549251276504068270, guid: 56867f2744aa2e743b4050a4704980c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2392,6 +2458,7 @@ MonoBehaviour:
   distance: 5
   speed: 20
   isRight: 1
+  isUp: 0
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
   cursorGrabH: {fileID: 0}
@@ -2423,7 +2490,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!1001 &2000245275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3103,6 +3170,7 @@ SceneRoots:
   - {fileID: 256078301}
   - {fileID: 2065669653}
   - {fileID: 1938026511}
+  - {fileID: 451042116}
   - {fileID: 886393692}
   - {fileID: 715903075}
   - {fileID: 1227123235}
