@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.IO;
 using UnityEngine;
 using TMPro;
 
@@ -22,6 +24,8 @@ public class BallScript : MonoBehaviour
     public Sprite ball;
     public Sprite square;
 
+    public AlphaObject UIAlpha;
+
     //Used to check whether the objective is ball (false) or square (true)
     public bool spriteChange;
     public float mass;
@@ -35,6 +39,9 @@ public class BallScript : MonoBehaviour
     //Used to define range of possible values for controlNo and prevent it from exceeding its bounds. Can be easily changes if more controls added
     public int controlNoMin;
     public int controlNoMax;
+
+    bool showUI;
+    float hideTimer;
 
     void Awake()
     {
@@ -54,15 +61,32 @@ public class BallScript : MonoBehaviour
         circleColl.enabled = true;
         boxColl.enabled = false;
 
+        HideUI();
+
     }
 
     void Update()
     {
 
+        if (showUI)
+        {
+
+            hideTimer += Time.unscaledDeltaTime;
+
+            if (hideTimer >= 5)
+            {
+
+                HideUI();
+
+            }
+
+        }
+
         //Inputs for navigating between different controls
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
 
+            ShowUI();
             controlNo--;
 
         }
@@ -70,6 +94,7 @@ public class BallScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
 
+            ShowUI();
             controlNo++;
 
         }
@@ -97,6 +122,8 @@ public class BallScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
 
+            ShowUI();
+
             if (controlNo == 0)
             {
 
@@ -114,6 +141,8 @@ public class BallScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
+
+            ShowUI();
 
             if (controlNo == 0)
             {
@@ -163,6 +192,22 @@ public class BallScript : MonoBehaviour
             shapeDisplay.text = "Square".ToString();
 
         }
+
+    }
+
+    public void ShowUI()
+    {
+        showUI = true;
+        UIAlpha.alpha = 0.7f;
+        hideTimer = 0.0f;
+
+    }
+
+    public void HideUI()
+    {
+
+        showUI = false;
+        UIAlpha.alpha = 0.4f;
 
     }
 
