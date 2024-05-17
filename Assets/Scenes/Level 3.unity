@@ -218,11 +218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4409293311504089888, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.19
+      value: -2.97
       objectReference: {fileID: 0}
     - target: {fileID: 4409293311504089888, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.17
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 4409293311504089888, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
       propertyPath: m_LocalPosition.z
@@ -254,6 +254,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4409293311504089888, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739615620889626704, guid: bd84842049a146e4ca8793360e1c2777, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -615,7 +619,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &275705693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1649,11 +1653,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2133992976709386858, guid: ce2c2df9aa578ab4a9bfe9b3fffc92ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.19
+      value: -2.97
       objectReference: {fileID: 0}
     - target: {fileID: 2133992976709386858, guid: ce2c2df9aa578ab4a9bfe9b3fffc92ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.17
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 2133992976709386858, guid: ce2c2df9aa578ab4a9bfe9b3fffc92ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2164,7 +2168,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &2000245275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2713,7 +2717,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2119908292
 MonoBehaviour:
   m_ObjectHideFlags: 0
