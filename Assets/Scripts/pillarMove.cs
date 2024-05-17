@@ -59,6 +59,17 @@ public class pillarMove : MonoBehaviour
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        //slam logic
+        if (Input.GetMouseButtonDown(0) && isMoving == false)
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (GetComponent<Collider2D>() == null || GetComponent<Collider2D>().OverlapPoint(mousePosition))
+            {
+                isMoving = true;
+                isSlamming = true;
+            }
+        }
+        /*
         //grab logic
         if (Input.GetMouseButtonDown(0) && !isMoving)
         {
@@ -94,6 +105,7 @@ public class pillarMove : MonoBehaviour
             isGrabbed = false;
             posStart = transform.position;
         }
+        */
     }
 
     void FixedUpdate()
@@ -101,17 +113,6 @@ public class pillarMove : MonoBehaviour
         if (selectedObject)
         {
             selectedObject.MovePosition(mousePosition + offset);
-        }
-
-        //slam logic
-        if (Input.GetMouseButtonDown(1) && isMoving == false)
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (GetComponent<Collider2D>() == null || GetComponent<Collider2D>().OverlapPoint(mousePosition))
-            {
-                isMoving = true;
-                isSlamming = true;
-            }
         }
 
         if (isSlamming)
@@ -136,7 +137,7 @@ public class pillarMove : MonoBehaviour
             Vector2 targetPosition = Vector2.MoveTowards(pillar.position, posStart, speed / 4 * Time.deltaTime);
             pillar.MovePosition(targetPosition);
 
-            if (Vector3.Distance(pillar.position, posStart) < 1f)
+            if (Vector3.Distance(pillar.position, posStart) < 0.25f)
             {
                 isMoving = false;
             }
