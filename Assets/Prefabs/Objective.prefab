@@ -211,6 +211,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   leftArrows: {fileID: 0}
   rightArrows: {fileID: 0}
+  respawnPoint: {fileID: 1629629552171495012, guid: a0ca4bc8b80776b4482ff5dc99b3ab21, type: 3}
   massDisplay: {fileID: 0}
   shapeDisplay: {fileID: 0}
   renderer: {fileID: 0}

@@ -8,6 +8,8 @@ public class spinningLauncher : MonoBehaviour
     bool rotating;
     bool ballCaught;
 
+    AudioSource audio;
+
     public bool directionRight;
 
     private Collider2D collide;
@@ -19,6 +21,7 @@ public class spinningLauncher : MonoBehaviour
     void Start()
     {
         collide = GetComponent<Collider2D>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public class spinningLauncher : MonoBehaviour
         {
             ballCaught = false;
             ballGrav.gravityScale = 1;
+            audio.Play();
 
             if (directionRight == true)
             {

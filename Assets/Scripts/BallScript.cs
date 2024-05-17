@@ -14,6 +14,8 @@ public class BallScript : MonoBehaviour
     public GameObject leftArrows;
     public GameObject rightArrows;
 
+    public GameObject respawnPoint;
+
     public TMP_Text massDisplay;
     public TMP_Text shapeDisplay;
 
@@ -209,6 +211,15 @@ public class BallScript : MonoBehaviour
         showUI = false;
         UIAlpha.alpha = 0.4f;
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Death")
+        {
+            Debug.Log("Respawning");
+            objective.transform.position = respawnPoint.transform.position;
+        }
     }
 
 }

@@ -10,6 +10,8 @@ public class Rotate : MonoBehaviour
     bool rotating;
     bool mouseOver;
 
+    AudioSource audio;
+
     void OnMouseDown()
     {
         if (rotating != true)
@@ -28,6 +30,11 @@ public class Rotate : MonoBehaviour
         mouseOver = false;
     }
 
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (mouseOver == true && rotating != true && Input.GetMouseButtonDown(1))
@@ -38,6 +45,7 @@ public class Rotate : MonoBehaviour
 
     IEnumerator Rotate90()
     {
+        audio.Play();
         rotating = true;
         float timeElapsed = 0;
         Quaternion startRotation = transform.rotation;
@@ -55,6 +63,7 @@ public class Rotate : MonoBehaviour
 
     IEnumerator RotateReverse90()
     {
+        audio.Play();
         rotating = true;
         float timeElapsed = 0;
         Quaternion startRotation = transform.rotation;

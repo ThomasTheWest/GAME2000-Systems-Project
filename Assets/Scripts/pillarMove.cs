@@ -55,7 +55,7 @@ public class pillarMove : MonoBehaviour
     {
         /*Debug.Log("is it moving? " + isMoving);
         Debug.Log("is it slamming? " + isSlamming);*/
-        Debug.Log("What is s pos? " + posStart.y);
+        //Debug.Log("What is s pos? " + posStart.y);
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
