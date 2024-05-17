@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class spinningLauncher : MonoBehaviour
@@ -7,6 +8,7 @@ public class spinningLauncher : MonoBehaviour
     float lerpDuration = 0.5f;
     bool rotating;
     bool ballCaught;
+    public int speed;
 
     AudioSource audio;
 
@@ -22,6 +24,7 @@ public class spinningLauncher : MonoBehaviour
     {
         collide = GetComponent<Collider2D>();
         audio = GetComponent<AudioSource>();
+        speed = 10;
     }
 
     // Update is called once per frame
@@ -105,9 +108,12 @@ public class spinningLauncher : MonoBehaviour
     {
         float timeElapsed = 0;
 
-        while (timeElapsed < 3000)
+        while (timeElapsed < 100)
         {
-            ballGrav.MovePosition(new Vector3(8, 9, 0) * Time.deltaTime);
+            Vector2 targetPosition = ballGrav.position + Vector2.right + Vector2.up * speed * Time.deltaTime * 1;
+            ballGrav.MovePosition(targetPosition);
+
+            //ballGrav.MovePosition(new Vector3(8, 9, 0) * speed * Time.deltaTime);
             timeElapsed += 1;
             yield return null;
         }
@@ -117,9 +123,12 @@ public class spinningLauncher : MonoBehaviour
     {
         float timeElapsed = 0;
 
-        while (timeElapsed < 3000)
+        while (timeElapsed < 100)
         {
-            ballGrav.MovePosition  (new Vector3(-8, 9, 0) * Time.deltaTime);
+            Vector2 targetPosition = ballGrav.position + Vector2.left + Vector2.up * speed * Time.deltaTime * 1;
+            ballGrav.MovePosition(targetPosition);
+
+            //ballGrav.MovePosition(new Vector3(8, 9, 0) * speed * Time.deltaTime);
             timeElapsed += 1;
             yield return null;
         }
