@@ -1112,6 +1112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasVictory: {fileID: 0}
   tagObjective: objective
+  sceneIndex: 2
 --- !u!61 &361622230
 BoxCollider2D:
   m_ObjectHideFlags: 0
