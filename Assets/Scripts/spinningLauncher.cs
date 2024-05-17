@@ -105,9 +105,9 @@ public class spinningLauncher : MonoBehaviour
     {
         float timeElapsed = 0;
 
-        while (timeElapsed < 300000)
+        while (timeElapsed < 3000)
         {
-            Ball.transform.Translate (new Vector3(8,9,0) * Time.deltaTime);
+            ballGrav.MovePosition(new Vector3(8, 9, 0) * Time.deltaTime);
             timeElapsed += 1;
             yield return null;
         }
@@ -117,9 +117,9 @@ public class spinningLauncher : MonoBehaviour
     {
         float timeElapsed = 0;
 
-        while (timeElapsed < 300000)
+        while (timeElapsed < 3000)
         {
-            Ball.transform.Translate (new Vector3(-8, 9, 0) * Time.deltaTime);
+            ballGrav.MovePosition  (new Vector3(-8, 9, 0) * Time.deltaTime);
             timeElapsed += 1;
             yield return null;
         }
