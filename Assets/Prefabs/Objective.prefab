@@ -103,6 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3087631704046030669}
   - component: {fileID: 5556257981399891159}
+  - component: {fileID: 979901428280717850}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -181,6 +182,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &979901428280717850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318565803210836471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ab6fefbfce53d4aa7e40b9fa2ed4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIAlpha: {fileID: 11400000, guid: b2bc0e4ad9ccb314599e80bdd9b633e0, type: 2}
+  myRenderer: {fileID: 5556257981399891159}
+  myColor: {r: 0, g: 0, b: 0, a: 0}
+  myAlpha: 0
 --- !u!1 &3073113897790345096
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5990971801288554197}
   - component: {fileID: 7882822464598053858}
+  - component: {fileID: 7526841602537841130}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -495,6 +513,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7526841602537841130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762846018342184094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ab6fefbfce53d4aa7e40b9fa2ed4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIAlpha: {fileID: 11400000, guid: b2bc0e4ad9ccb314599e80bdd9b633e0, type: 2}
+  myRenderer: {fileID: 7882822464598053858}
+  myColor: {r: 0, g: 0, b: 0, a: 0}
+  myAlpha: 0
 --- !u!1 &3959058794411305729
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,6 +1011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8016038555308189598}
   - component: {fileID: 8048894149252749031}
+  - component: {fileID: 2638383995594597705}
   m_Layer: 0
   m_Name: Triangle (1)
   m_TagString: Untagged
@@ -1055,6 +1090,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2638383995594597705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703894216071431103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ab6fefbfce53d4aa7e40b9fa2ed4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIAlpha: {fileID: 11400000, guid: b2bc0e4ad9ccb314599e80bdd9b633e0, type: 2}
+  myRenderer: {fileID: 8048894149252749031}
+  myColor: {r: 0, g: 0, b: 0, a: 0}
+  myAlpha: 0
 --- !u!1 &5920442385747734006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6977418720623495690}
   - component: {fileID: 6651208578771077076}
+  - component: {fileID: 1253592236730537067}
   m_Layer: 0
   m_Name: Triangle (3)
   m_TagString: Untagged
@@ -1143,6 +1195,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1253592236730537067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920442385747734006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ab6fefbfce53d4aa7e40b9fa2ed4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIAlpha: {fileID: 11400000, guid: b2bc0e4ad9ccb314599e80bdd9b633e0, type: 2}
+  myRenderer: {fileID: 6651208578771077076}
+  myColor: {r: 0, g: 0, b: 0, a: 0}
+  myAlpha: 0
 --- !u!1 &5926319370422113706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5944115406745510948}
   - component: {fileID: 4343217603013545153}
+  - component: {fileID: 2946961258466466398}
   m_Layer: 0
   m_Name: Triangle (3)
   m_TagString: Untagged
@@ -1231,6 +1300,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2946961258466466398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926319370422113706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ab6fefbfce53d4aa7e40b9fa2ed4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIAlpha: {fileID: 11400000, guid: b2bc0e4ad9ccb314599e80bdd9b633e0, type: 2}
+  myRenderer: {fileID: 4343217603013545153}
+  myColor: {r: 0, g: 0, b: 0, a: 0}
+  myAlpha: 0
 --- !u!1 &6270958597234539648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5069272587798383917}
   - component: {fileID: 1829380105065939091}
+  - component: {fileID: 8820604412220422287}
   m_Layer: 0
   m_Name: Triangle (2)
   m_TagString: Untagged
@@ -1319,6 +1405,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8820604412220422287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270958597234539648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ab6fefbfce53d4aa7e40b9fa2ed4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIAlpha: {fileID: 11400000, guid: b2bc0e4ad9ccb314599e80bdd9b633e0, type: 2}
+  myRenderer: {fileID: 1829380105065939091}
+  myColor: {r: 0, g: 0, b: 0, a: 0}
+  myAlpha: 0
 --- !u!1 &6734236722109623472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,6 +1565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2535017937962484430}
   - component: {fileID: 4593059123234930763}
+  - component: {fileID: 3130283005131956859}
   m_Layer: 0
   m_Name: Triangle (2)
   m_TagString: Untagged
@@ -1541,6 +1644,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3130283005131956859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083831341774343890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ab6fefbfce53d4aa7e40b9fa2ed4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIAlpha: {fileID: 11400000, guid: b2bc0e4ad9ccb314599e80bdd9b633e0, type: 2}
+  myRenderer: {fileID: 4593059123234930763}
+  myColor: {r: 0, g: 0, b: 0, a: 0}
+  myAlpha: 0
 --- !u!1 &7870817001742741594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,6 +1772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1704199175970916215}
   - component: {fileID: 3069525585913331280}
+  - component: {fileID: 4860239863495987110}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -1737,6 +1857,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4860239863495987110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546227503668583000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ab6fefbfce53d4aa7e40b9fa2ed4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIAlpha: {fileID: 11400000, guid: b2bc0e4ad9ccb314599e80bdd9b633e0, type: 2}
+  myRenderer: {fileID: 3069525585913331280}
+  myColor: {r: 0, g: 0, b: 0, a: 1}
+  myAlpha: 0
 --- !u!1 &8987482616106894511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,6 +1883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5034416387825969455}
   - component: {fileID: 5499443141981794047}
+  - component: {fileID: 5069988078950476916}
   m_Layer: 0
   m_Name: Triangle (1)
   m_TagString: Untagged
@@ -1825,3 +1962,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5069988078950476916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987482616106894511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ab6fefbfce53d4aa7e40b9fa2ed4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIAlpha: {fileID: 11400000, guid: b2bc0e4ad9ccb314599e80bdd9b633e0, type: 2}
+  myRenderer: {fileID: 5499443141981794047}
+  myColor: {r: 0, g: 0, b: 0, a: 0}
+  myAlpha: 0
