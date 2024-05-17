@@ -8,6 +8,7 @@ public class pillarMove : MonoBehaviour
     public float moveLimit;
     private float maxLeft, maxRight;
     private bool isMoving = false;
+    private Vector2 posOriginal, posLimited;
 
     [Header("Grab")]
     public Rigidbody2D selectedObject;
@@ -35,6 +36,7 @@ public class pillarMove : MonoBehaviour
         maxRight = moveLimit;
 
         pillar = GetComponent<Rigidbody2D>();
+        posOriginal = transform.position;
         posStart = transform.position;
 
         Cursor.SetCursor(cursorOpen, hotSpot, cursorMode);
@@ -51,25 +53,37 @@ public class pillarMove : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log("is it moving? " + isMoving);
-        Debug.Log("is it slamming? " + isSlamming);
+        /*Debug.Log("is it moving? " + isMoving);
+        Debug.Log("is it slamming? " + isSlamming);*/
+        Debug.Log("What is s pos? " + posStart.y);
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         //grab logic
         if (Input.GetMouseButtonDown(0) && !isMoving)
         {
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
+            //this array just looks for whatever has the Mover tag and is a collider
+            Collider2D[] targetObjects = Physics2D.OverlapPointAll(mousePosition);
 
-            if (targetObject)
+            foreach (Collider2D targetObject in targetObjects)
             {
-                Cursor.SetCursor(cursorGrabH, hotSpot, cursorMode);
+                if (targetObject.CompareTag("mover"))
+                {
+                    Cursor.SetCursor(cursorGrabH, hotSpot, cursorMode);
 
-                selectedObject = targetObject.transform.gameObject.GetComponent<Rigidbody2D>();
-                offset = selectedObject.transform.position - mousePosition;
-                isMoving = true;
-                isGrabbed = true;
+                    selectedObject = targetObject.transform.gameObject.GetComponent<Rigidbody2D>();
+                    offset = selectedObject.transform.position - mousePosition;
+                    isMoving = true;
+                    isGrabbed = true;
+                }
             }
+        }
+
+        if (isGrabbed)
+        {
+            posLimited = mousePosition + offset;
+            posLimited.y = Mathf.Clamp(posOriginal.y, maxLeft, maxRight);
+            selectedObject.transform.position = posLimited;
         }
 
         if (Input.GetMouseButtonUp(0) && selectedObject)
@@ -81,6 +95,7 @@ public class pillarMove : MonoBehaviour
             posStart = transform.position;
         }
     }
+
     void FixedUpdate()
     {
         if (selectedObject)
